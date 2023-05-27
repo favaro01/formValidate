@@ -26,7 +26,9 @@ const Login = () => {
     mode: "onBlur",
     defaultValues,
     reValidateMode: "onChange",
-  });
+  });  
+
+  console.log(isValid);
 
   return (
     <Container>
@@ -49,7 +51,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button type="submit" title="Entrar" disabled={!isValid} />
         </Column>
       </LoginContainer>
     </Container>
